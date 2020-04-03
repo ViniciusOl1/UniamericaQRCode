@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: #E8E8E8;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFF;
+    height: 100px;
+    box-shadow: 0 0 16px rgba(0,0,0,0.1);
+    padding: 10px 40px;
+}
+header img{
+    height: 100%;
+}
+header nav ul{
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+}
+
+header nav ul li{
+    padding: 10px;
+}
+
+header nav ul li a{
+    color: #63B446;
+    text-decoration: none;
+}
+header nav ul li a:hover{
+    font-weight: 500;
+}
+div#container{
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+}
+
+aside{
+    background: #FFF;
+    box-shadow: 0 0 16px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    padding: 10px;
+    margin: 40px;
+    text-align: center;
+}
+aside h2{
+    color: #0b396d;
+    margin: 20px;
+    font-weight: 500;
+}
+
+aside img{
+    width: 70%;
+    margin: 20px;
+}
+
+aside button{
+    background: #63B446;
+    border: 0;
+    border-radius: 6px;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    font-size: 20px;
+}
+aside button:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+main h2{
+    color: #0b396d;
+    margin: 40px 0 0;
+    font-weight: 500;
+    grid-column: span 3;
+}
+
+section.duvidas{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 20px 0 0;
+}
+
+section.duvida-item{
+    background-color: #FFF;
+    box-shadow: 0 0 16px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    padding: 10px;
+}
+section.duvida-item h3{
+    color: #0b396d;
+    text-align: center;
+    font-weight: normal;
+}
+
+section.duvida-item p{
+    margin: 10px;
+}
+
+section.duvida-item button{
+    background: #63B446;
+    border: 0;
+    border-radius: 6px;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    font-size: 16px;
+}
+section.duvida-item button:hover{
+        cursor: pointer;
+        opacity: 0.9;
+}
+
+section.presentes{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+section.presente-item{
+    display: flex;
+    align-items: center;
+    background: #FFF;
+    box-shadow: 0 0 16px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    padding: 10px;
+}
+section.presente-item span{
+    color: #0b396d;
+    font-weight: 500;
+}
+
+.avatar {
+    width: 54px;
+    height: 54px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.avatar img {
+    width: auto;
+    height: 100%;
+    margin-left: -20px;
+}
