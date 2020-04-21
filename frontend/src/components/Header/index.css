@@ -1,0 +1,29 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFF;
+    height: 100px;
+    box-shadow: 0 0 16px rgba(0,0,0,0.1);
+    padding: 10px 40px;
+}
+header img{
+    height: 100%;
+}
+header nav ul{
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+}
+
+header nav ul li{
+    padding: 10px;
+}
+
+header nav ul li a{
+    color: #63B446;
+    text-decoration: none;
+}
+header nav ul li a:hover{
+    font-weight: 500;
+}
