@@ -12,7 +12,7 @@ function Alunos() {
             <main>
                 <section class="title">
                     <h2>Alunos Cadastrados</h2>
-                    <button>+ Adicionar Aluno</button>
+                    <button>+ Eliminar Aluno</button>
                 </section>
 
                 <section class="alunos">
