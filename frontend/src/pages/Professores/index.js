@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+import './index.css';
 
 import Header from '../../components/Header';
 
@@ -9,7 +11,7 @@ function Professores() {
     <main>
                 <section class="title">
                     <h2>Professores Cadastrados</h2>
-                    <button>Cadastrar Professores</button>
+                    <Link to="professores/cadastrar" className="button">+ Cadastrar Professores</Link>
                 </section>
 
                 <section class="professores">

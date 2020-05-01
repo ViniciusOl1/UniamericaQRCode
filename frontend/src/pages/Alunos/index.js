@@ -1,18 +1,17 @@
 import React from 'react';
-
+import { Link } from "react-router-dom";
 import './index.css';
 
 import Header from '../../components/Header';
 
 function Alunos() {
-
     return (
         <>
             <Header />
             <main>
                 <section class="title">
                     <h2>Alunos Cadastrados</h2>
-                    <button>+ Cadastrar Alunos</button>
+                    <Link to="alunos/cadastrar" className="button">+ Cadastrar Alunos</Link>
                 </section>
 
                 <section class="alunos">
