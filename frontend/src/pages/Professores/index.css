@@ -15,16 +15,16 @@ section.title h2{
     color: #0b396d;
     font-weight: 500;
 }
-
-section.title button{
+section.title .button{
     background: #63B446;
     border: 0;
     border-radius: 6px;
     color: white;
     padding: 16px 20px;
     font-size: 20px;
+    text-decoration: none;
 }
-section.title button:hover{
+section.title .button:hover{
     cursor: pointer;
     opacity: 0.9;
 }
