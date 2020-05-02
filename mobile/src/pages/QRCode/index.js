@@ -32,7 +32,6 @@ export default function QRCode({ navigation }) {
                 onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
                 ratio='16:9'
                 style={qrcode.camera}
-                barCodeTypes={[BarCodeScanner.Constants.BarCodeType.qr]}
             >
                 <View
                     style={qrcode.qrcode}
