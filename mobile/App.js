@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, TextInput, Button, StyleSheet  } from 'react-native';
+import { Text, View, TextInput, Button  } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { BarCodeScanner } from 'expo-barcode-scanner';
-
+import { Camera } from 'expo-camera';
 const Menu = createBottomTabNavigator();
 
 
@@ -15,7 +15,7 @@ function HomeScreen() {
     </View>
   );
 }
- function QRCode() {
+ function QRCode({ navigation }) {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
 
@@ -29,7 +29,7 @@ function HomeScreen() {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     alert(`Escaneado tipo ${type} e data ${data} realizado!`);
-    return <HomeScreen />;    
+    <HomeScreen />;    
   }
 
   if (hasPermission === null) {
@@ -39,30 +39,35 @@ function HomeScreen() {
     return <Text>Acesso não permitido a câmera.</Text>;
   }
   return (
-    
     <View style={{flex: 1}}>
-        <BarCodeScanner
-         barCodeTypes={['qr']}
-        onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-        style={{
-          flex: 1,
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          alignItems: 'center',
-          justifyContent: 'space-around',
-        }}>
-          <View
+    <Camera
+      onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+      ratio='16:9'
+      style={{
+        flex: 1,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+      }}
+      barCodeTypes={[BarCodeScanner.Constants.BarCodeType.qr]}
+    >
+      <View
         style={{
           width: 250,
           height: 250,
           backgroundColor: 'transparent',
           borderColor: '#63B446',
           borderWidth: 5,
+          borderRadius: 20
         }}
-      /></BarCodeScanner>
+      />
+
+    </Camera>
+    {scanned && navigation.goBack()}
     </View>
   );
 }
