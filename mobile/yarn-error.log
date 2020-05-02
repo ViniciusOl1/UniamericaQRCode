@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\vinic\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-native-camera
+  C:\Program Files\nodejs\node.exe C:\Users\vinic\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @react-navigation/material-bottom-tabs react-native-paper
 
 PATH: 
-  C:\Python27\;C:\Python27\Scripts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\ProgramData\chocolatey\bin;C:\Android\Sdk\platform-tools;C:\Android\Sdk\tools;C:\Program Files\Java\jdk-14\bin;C:\Program Files\nodejs\;C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;;C:\Users\vinic\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\vinic\AppData\Roaming\npm;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps
+  C:\Users\vinic\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\vinic\bin;C:\Python27;C:\Python27\Scripts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\ProgramData\chocolatey\bin;C:\Android\Sdk\platform-tools;C:\Android\Sdk\tools;C:\Program Files\Java\jdk-14\bin;C:\Program Files\nodejs;C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\vinic\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\vinic\AppData\Roaming\npm;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
   1.22.4
@@ -32,10 +32,13 @@ npm manifest:
       "@react-navigation/native": "^5.2.3",
       "@react-navigation/stack": "^5.2.18",
       "expo": "~37.0.3",
+      "expo-barcode-scanner": "~8.1.0",
+      "expo-camera": "~8.2.0",
       "react": "~16.9.0",
       "react-dom": "~16.9.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
       "react-native-gesture-handler": "~1.6.0",
+      "react-native-ionicons": "^5.0.0-rc",
       "react-native-reanimated": "~1.7.0",
       "react-native-safe-area-context": "0.7.3",
       "react-native-screens": "~2.2.0",
@@ -2375,6 +2378,22 @@ Lockfile:
       path-browserify "^1.0.0"
       url-parse "^1.4.4"
   
+  expo-barcode-scanner@~8.1.0:
+    version "8.1.0"
+    resolved "https://registry.yarnpkg.com/expo-barcode-scanner/-/expo-barcode-scanner-8.1.0.tgz#2f1504465725673a18453d976062b3aab55dd867"
+    integrity sha512-S9fpP4NKRml/xVpioHpixn0RSsGs3mgdhwjGjMitl3Cx/euxJtVy1UZK1zX5/62vFtO6gl/PQgeLGpv8Bm8w+w==
+    dependencies:
+      lodash "^4.6.0"
+      prop-types "^15.6.0"
+  
+  expo-camera@~8.2.0:
+    version "8.2.0"
+    resolved "https://registry.yarnpkg.com/expo-camera/-/expo-camera-8.2.0.tgz#9c849f0dc409e1fe6ee886f479e0ee0050b6d386"
+    integrity sha512-wGVqQVVR4YCkHuI7u+qloI1p2UbYwpU8hs0IEM+1Th4JQekAPUEfOmJI6ZHGj36El8f87ghRed2MXzOssn4hHg==
+    dependencies:
+      lodash "^4.6.0"
+      prop-types "^15.6.0"
+  
   expo-constants@~9.0.0:
     version "9.0.0"
     resolved "https://registry.yarnpkg.com/expo-constants/-/expo-constants-9.0.0.tgz#35c600079ee91d38fe4f56375caae6e90f122fdd"
@@ -4404,6 +4423,11 @@ Lockfile:
       hoist-non-react-statics "^2.3.1"
       invariant "^2.2.4"
       prop-types "^15.7.2"
+  
+  react-native-ionicons@^5.0.0-rc:
+    version "5.0.0-rc"
+    resolved "https://registry.yarnpkg.com/react-native-ionicons/-/react-native-ionicons-5.0.0-rc.tgz#07e96279ddaa789c15a14564c091937cb33eba91"
+    integrity sha512-sxGRilnejot/n1GFwUrAzOgZeF9sHJzpV6AcwQKR8q5U9k+ZCgDHq5ajrSn82A4b5TDv6F0aPJTDB2/9/EuVcw==
   
   react-native-iphone-x-helper@^1.2.1:
     version "1.2.1"
