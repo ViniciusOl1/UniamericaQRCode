@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import Login from './src/pages/Login';
 import HomeScreen from './src/pages/HomeScreen';
 import Profile from './src/pages/Profile';
 import QRCode from './src/pages/QRCode';
@@ -52,6 +53,7 @@ function MainMenu() {
 
 export default function App() {
   return (
+    // <Login />
     <NavigationContainer>
       <MainMenu />
     </NavigationContainer>
