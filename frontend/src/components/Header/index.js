@@ -9,7 +9,7 @@ function Header() {
   const teacherId = localStorage.getItem('teacherId');
   const history = useHistory();
   useEffect(() => {
-    api.get('professores', {
+    api.get('/professores', {
       headers: { Authorization: teacherId }
     });
     if (!teacherId) {
