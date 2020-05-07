@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
 import './index.css';
 
-import api from '../../services/api';
 import Header from '../../components/Header';
 
 function Dashboard() {
-    const teacherId = localStorage.getItem('teacherId');
-    const teacherName = localStorage.getItem('teacherName');
-    const history = useHistory();
-
   return (
     <>
     <Header />

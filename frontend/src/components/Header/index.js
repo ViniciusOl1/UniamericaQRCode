@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import './index.css';
 
@@ -7,19 +7,15 @@ import logoImg from '../../assets/logo.png';
 
 function Header() {
   const teacherId = localStorage.getItem('teacherId');
-  const teacherName = localStorage.getItem('teacherName');
-  const [teachers, setTeachers] = useState('');
   const history = useHistory();
   useEffect(() => {
     api.get('professores', {
       headers: { Authorization: teacherId }
-    }).then(res => {
-      setTeachers(res.data);
     });
     if (!teacherId) {
       history.push('/');
     }
-  }, [teacherId]);
+  }, [history, teacherId]);
 
   function handleLogout() {
     localStorage.clear();
