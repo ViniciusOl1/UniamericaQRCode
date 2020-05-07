@@ -33,7 +33,7 @@ function CadastroProfessores() {
                     <form onSubmit={handleAddTeacher}>
                         <input type="text" placeholder="Nome Completo: " value={fullname} onChange={e => setFullname(e.target.value)} />
                         <input type="text" placeholder="E-mail: " value={email} onChange={e => setEmail(e.target.value)} />
-                        <input type="text" placeholder="Senha: " value={password} onChange={e => setPassword(e.target.value)} />
+                        <input type="password" placeholder="Senha: " value={password} onChange={e => setPassword(e.target.value)} />
                         <button type="submit" className="button-green">Acessar</button>
                         <button type="reset" className="button-red">Limpar</button>
                     </form>
