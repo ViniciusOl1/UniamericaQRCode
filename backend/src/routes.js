@@ -20,7 +20,8 @@ routes.post('/professores', ProfessoresController.create);
 routes.delete('/professores/:id', ProfessoresController.delete);
 routes.put('/professores/:id', ProfessoresController.update);
 // QRCode
-routes.post('/aula', ClassController.index);
 routes.get('/aula', ClassController.index);
+routes.post('/aula/qrcode', ClassController.create);
+routes.get('/aula/qrcode', ClassController.create);
 
 module.exports = routes;

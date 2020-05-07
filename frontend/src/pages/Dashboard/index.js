@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './index.css';
 
 import Header from '../../components/Header';
@@ -10,9 +10,8 @@ function Dashboard() {
     <div id="container">
         <aside>
             <h2>Marque sua presença</h2>
-            <img src="https://boofcv.org/images/thumb/3/35/Example_rendered_qrcode.png/400px-Example_rendered_qrcode.png"
-                alt="Marque sua Presença" />
-            <button>Gerar QRCode</button>
+                <img src="http://localhost:3333/aula/qrcode"
+                alt="Marque sua Presença" />       
         </aside>
         <main>
             <section class="presentes">
