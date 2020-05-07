@@ -24,7 +24,7 @@ module.exports = {
             fullname,
             email,
             password
-        });
+        }).where('id',id);
         return res.json({fullname, email, password});
     },
     async delete(req, res){
