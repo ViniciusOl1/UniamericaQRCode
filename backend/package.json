@@ -9,6 +9,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "knex": "^0.21.1",
+    "moment": "^2.25.3",
+    "moment-timezone": "^0.5.28",
+    "qr-image": "^3.2.0",
     "sqlite3": "^4.2.0"
   },
   "devDependencies": {
