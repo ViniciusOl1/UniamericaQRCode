@@ -4,9 +4,11 @@ import { View, Text, StyleSheet } from 'react-native';
 // import { Container } from './styles';
 
 export default function HomeScreen() {
+  const studentId = localStorage.getItem('studentId');
+  const studentName = localStorage.getItem('studentName');
   return (
     <View style={homescreen.container}>
-      <Text>Bem vindo!</Text>
+      <Text>Bem vindo {studentName} - {studentId}!</Text>
     </View>
   );
 }

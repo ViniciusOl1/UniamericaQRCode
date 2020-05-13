@@ -5,7 +5,7 @@ module.exports = {
         const alunos = await connection('students')
             .where('ra', ra)
             .where('password', password)
-            .select('fullname')
+            .select('*')
             .first();
             if(!alunos){
                 return res.status(400).json({error: 'Nenhum aluno encontrado'});

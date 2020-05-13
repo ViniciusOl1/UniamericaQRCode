@@ -1,28 +1,42 @@
-import React from 'react';
+import React, {useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Image } from 'react-native';
-
+import 'localstorage-polyfill';
 import logoIMG from './../../../assets/logo.png';
+import api from '../../services/api';
 
-// import { Container } from './styles';
 
-export default function Login( ) {
+export default function Login({ navigation }) {
+  const [ra, setRa] = useState('');
+  const [password, setPassword] = useState('');
+
+  async function handleLogin(e){
+    try{
+      const res = await api.post('/login/alunos', { ra, password });
+      console.log(res.data.id);
+      await localStorage.setItem('studentId', res.data.id);
+      await localStorage.setItem('studentName', res.data.fullname);
+      navigation.navigate('HomeScreen');
+    }catch(err){
+      alert(`Falha no login, tente novamente ${err}`);
+    }
+  }
+
   return (
     <View style={login.container}>
         <View style={login.logo}>
         <Image source={logoIMG} style={login.logoIMG}/>
         </View>
         <View style={login.box}>
-        <TextInput placeholder="Digite seu RA" style={login.textInput} placeholderTextColor="#0B396D" />
-        <TextInput placeholder="Digite sua Senha" style={login.textInput} placeholderTextColor="#0B396D" />
+        <TextInput placeholder="Digite seu RA" style={login.textInput} placeholderTextColor="#0B396D" defaultValue={ra} onChangeText={setRa} />
+        <TextInput placeholder="Digite sua Senha" style={login.textInput} placeholderTextColor="#0B396D" defaultValue={password} onChangeText={setPassword} secureTextEntry/>
         
         <View style={login.button}>
-                    <Button title="Editar" color="#63B446" fontSize="30" />
+                    <Button title="Entrar" color="#63B446" fontSize="30" onPress={handleLogin}  />
         </View>
         </View>
     </View>
   );
 }
-
 const login = StyleSheet.create({
     container: {
       backgroundColor: "#E8E8E8",

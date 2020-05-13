@@ -7,6 +7,7 @@ import { Camera } from 'expo-camera';
 export default function QRCode({ navigation }) {
     const [hasPermission, setHasPermission] = useState(null);
     const [scanned, setScanned] = useState(false);
+    const studentId = localStorage.getItem('studentId');
 
     useEffect(() => {
         (async () => {
@@ -17,7 +18,7 @@ export default function QRCode({ navigation }) {
 
     const handleBarCodeScanned = ({ type, data }) => {
         setScanned(true);
-        alert(`Escaneado tipo ${type} e data ${data} realizado!`);
+        alert(`Escaneado tipo ${type} e data ${data} realizado agora só inserir no id ${studentId}!`);
     }
 
     if (hasPermission === null) {
@@ -38,7 +39,7 @@ export default function QRCode({ navigation }) {
                 />
 
             </Camera>
-            {scanned && navigation.goBack()}
+            {scanned && navigation.navigate('HomeScreen')}
         </View>
     );
 }
