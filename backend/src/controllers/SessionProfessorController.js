@@ -5,7 +5,7 @@ module.exports = {
         const professores = await connection('teachers')
             .where('email', email)
             .where('password', password)
-            .select('fullname')
+            .select('*')
             .first();
             if(!professores){
                 return res.status(400).json({error: 'Nenhum professor encontrado'});

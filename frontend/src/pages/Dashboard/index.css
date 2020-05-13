@@ -8,19 +8,19 @@ aside{
     background: #FFF;
     box-shadow: 0 0 16px rgba(0,0,0,0.1);
     border-radius: 6px;
-    padding: 10px;
+    padding: 5px;
     margin: 40px;
     text-align: center;
 }
 aside h2{
     color: #0b396d;
-    margin: 20px;
+    margin: 20px 0px 5px 0px;
     font-weight: 500;
 }
 
 aside img{
-    width: 70%;
-    margin: 20px;
+    width: 85%;
+    margin: 10px;
 }
 
 aside button{

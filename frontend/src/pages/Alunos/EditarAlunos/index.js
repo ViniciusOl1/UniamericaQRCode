@@ -4,7 +4,7 @@ import './index.css';
 import Header from '../../../components/Header';
 import api from '../../../services/api';
 
-function CadastroAlunos() {
+function EditarAlunos() {
     const [fullname, setFullname ] = useState('');
     const [ra, setRa] = useState('');
     const [email, setEmail] = useState('');
@@ -46,4 +46,4 @@ function CadastroAlunos() {
     );
 }
 
-export default CadastroAlunos;
+export default EditarAlunos;

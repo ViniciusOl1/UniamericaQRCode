@@ -1,10 +1,22 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory } from "react-router-dom";
 import './index.css';
 
 import Header from '../../components/Header';
+import api from '../../services/api';
 
 function Alunos() {
+    const [students, setStudents] = useState([]);
+    const history = useHistory();
+    useEffect(() => {
+        async function loadStudents() {
+            const response = await api('/alunos');
+            setStudents(response.data);
+        }
+
+        loadStudents();
+    }, [])
+
     return (
         <>
             <Header />
@@ -15,13 +27,16 @@ function Alunos() {
                 </section>
 
                 <section class="alunos">
-                        <section key="aluno.id" class="aluno-item">
-                        <section class="avatar">
-                            <img src="https://www.tenhomaisdiscosqueamigos.com/wp-content/uploads/2017/03/Avatar-1280x720.jpg"
-                                alt="aluno.nomecompleto" class="avatar" />
+                    {students.map(student => (
+                        <section key={student.id} class="aluno-item" onClick={() => { history.push(`alunos/editar/${student.id}`)}}>
+                            <section class="avatar">
+                                <img src="https://www.tenhomaisdiscosqueamigos.com/wp-content/uploads/2017/03/Avatar-1280x720.jpg"
+                                    alt={student.fullname} class="avatar" />
+                            </section>
+                            <span>{student.fullname}</span>
                         </section>
-                        <span>aluno.nomecompleto</span>
-                    </section>                        
+                    ))}
+
 
                 </section>
             </main>
