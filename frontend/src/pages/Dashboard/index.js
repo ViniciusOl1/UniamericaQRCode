@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './index.css';
-
+import { saveAs } from 'file-saver';
 import Header from '../../components/Header';
 import api from '../../services/api';
 
@@ -14,7 +14,7 @@ function Dashboard() {
         }
 
         loadStudents();
-    }, [])
+    }, []);
   return (
     <>
     <Header />
@@ -23,7 +23,7 @@ function Dashboard() {
         <aside>
             <h2>Marque sua presença</h2>
                 <img src="http://localhost:3333/aula/qrcode"
-                alt="Marque sua Presença" />       
+                alt="Marque sua Presença" />
         </aside>
         <main>
             <section class="presentes" onload="javascript:autoRefresh(6000);">

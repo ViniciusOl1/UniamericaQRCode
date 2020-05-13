@@ -9,6 +9,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "html-pdf": "^2.2.0",
     "knex": "^0.21.1",
     "moment": "^2.25.3",
     "moment-timezone": "^0.5.28",

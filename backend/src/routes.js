@@ -5,6 +5,7 @@ const ClassController = require('./controllers/ClassController');
 const SessionAlunoController = require('./controllers/SessionAlunoController');
 const SessionProfessorController = require('./controllers/SessionProfessorController');
 const FrequencyController = require('./controllers/FrequencyController');
+const RelatorioController = require('./controllers/RelatorioController');
 const routes = express.Router();
 
 //Login
@@ -27,5 +28,7 @@ routes.get('/aula/qrcode', ClassController.create);
 
 routes.get('/frequencia', FrequencyController.index);
 routes.post('/frequencia', FrequencyController.create);
+
+routes.get('/relatorios', RelatorioController.index);
 
 module.exports = routes;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import './index.css';
 import Header from '../../../components/Header';
@@ -9,6 +9,7 @@ function EditarProfessores() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const history = useHistory();
+
     async function handleAddTeacher(e){
         e.preventDefault();
         const data = {
