@@ -2,8 +2,19 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 import Header from '../../components/Header';
+import api from '../../services/api';
 
 function Dashboard() {
+    const [students, setStudents] = useState([]);
+
+    useEffect(() => {
+        async function loadStudents() {
+            const response = await api('/frequencia');
+            setStudents(response.data);
+        }
+
+        loadStudents();
+    }, [...students])
   return (
     <>
     <Header />
@@ -16,13 +27,15 @@ function Dashboard() {
         <main>
             <section class="presentes">
                 <h2>Alunos Presentes</h2>
-                <section class="presente-item">
+                {students.map(student => (
+                <section key={student.id} class="presente-item">
                     <section class="avatar">
                         <img src="https://www.tenhomaisdiscosqueamigos.com/wp-content/uploads/2017/03/Avatar-1280x720.jpg"
-                        alt="Vinicius Oliveira" class="avatar" />
+                        alt="{student.fullname}" class="avatar" />
                     </section>
-                    <span>Vinicius Oliveira</span>
+                    <span>{student.fullname}</span>
                 </section>
+                ))}
             </section>
         </main>
     </div>

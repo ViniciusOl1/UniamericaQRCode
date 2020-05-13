@@ -3,6 +3,8 @@ import { View, Text, StyleSheet } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { Camera } from 'expo-camera';
 // import { Container } from './styles';
+import api from '../../services/api';
+
 
 export default function QRCode({ navigation }) {
     const [hasPermission, setHasPermission] = useState(null);
@@ -18,7 +20,13 @@ export default function QRCode({ navigation }) {
 
     const handleBarCodeScanned = ({ type, data }) => {
         setScanned(true);
-        alert(`Escaneado tipo ${type} e data ${data} realizado agora só inserir no id ${studentId}!`);
+        try{
+            const res = api.post('/frequencia', { studentId, data });
+            navigation.navigate('HomeScreen');
+          }catch(err){
+            alert(`Falha ao gerar presença, tente novamente ${err}`);
+          }
+        alert(`Presença realizada na data de ${data} no id ${studentId}!`);
     }
 
     if (hasPermission === null) {
