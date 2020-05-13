@@ -41,6 +41,7 @@ section.professor-item{
     box-shadow: 0 0 16px rgba(0,0,0,0.1);
     border-radius: 6px;
     padding: 10px;
+    cursor: pointer;
 }
 section.professor-item span{
     color: #0b396d;
