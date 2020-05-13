@@ -14,10 +14,11 @@ function Dashboard() {
         }
 
         loadStudents();
-    }, [...students])
+    }, [])
   return (
     <>
     <Header />
+    <meta http-equiv="refresh" content="5"></meta>
     <div id="container">
         <aside>
             <h2>Marque sua presença</h2>
@@ -25,7 +26,7 @@ function Dashboard() {
                 alt="Marque sua Presença" />       
         </aside>
         <main>
-            <section class="presentes">
+            <section class="presentes" onload="javascript:autoRefresh(6000);">
                 <h2>Alunos Presentes</h2>
                 {students.map(student => (
                 <section key={student.id} class="presente-item">
