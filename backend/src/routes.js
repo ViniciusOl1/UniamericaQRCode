@@ -13,11 +13,13 @@ routes.post('/login/alunos', SessionAlunoController.create);
 routes.post('/login/professores', SessionProfessorController.create);
 //Alunos
 routes.get('/alunos', AlunosController.index);
+routes.get('/alunos/:id', AlunosController.index);
 routes.post('/alunos', AlunosController.create);
 routes.delete('/alunos/:id', AlunosController.delete);
 routes.put('/alunos/:id', AlunosController.update);
 //Professores
 routes.get('/professores', ProfessoresController.index);
+routes.get('/professores/:id', ProfessoresController.index);
 routes.post('/professores', ProfessoresController.create);
 routes.delete('/professores/:id', ProfessoresController.delete);
 routes.put('/professores/:id', ProfessoresController.update);
