@@ -3,7 +3,7 @@ const moment = require('moment-timezone');
 
 module.exports = {
     async index(req, res) {
-        const data  = moment.tz("America/Sao_Paulo").format("DD-MM-YYYY");
+        const data = moment.tz("America/Sao_Paulo").format("DD-MM-YYYY");
         const alunos = await connection('frequency')
             .join('students', 'students.id', '=', 'frequency.student_id')
             .join('class', 'class.id', '=', 'frequency.class_id')
@@ -22,13 +22,20 @@ module.exports = {
             .select('id')
             .where('data', data)
             .first();
-
-        // const data  = moment.tz("America/Sao_Paulo").format("DD-MM-YYYY");
-        const frequency = await connection('frequency').insert({
-            "student_id": studentId,
-            "class_id": resp.id
-        });
-        return res.json(frequency);
+        const exists = await connection('frequency')
+            .where("student_id", studentId)
+            .where("class_id", resp.id)
+            .select('*')
+            .first();
+        if (!exists) {
+            const frequency = await connection('frequency').insert({
+                "student_id": studentId,
+                "class_id": resp.id
+            });
+            return res.json(frequency);
+        } else {
+            return res.status(400).json({ error: 'Presença já realizada' });
+        }
 
     },
 }
