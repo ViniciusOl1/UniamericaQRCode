@@ -1,4 +1,7 @@
 const connection = require('../database/connection');
+const multer = require("multer");
+const upImage = multer({ dest:'./tmp/uploads'})
+
 module.exports = {
     async index(req, res) {
         const { id } = req.params;
@@ -22,6 +25,14 @@ module.exports = {
         return res.json({ fullname, ra, email, password });
     },
     async update(req, res) {
+        upImage.single('pictures'), (req, res) =>{
+            const {pictures} = req.body//Se não der certo tentar tirar o .body 
+            if (pictures){
+                return res.json({filename});
+            }else {
+                error:"erro";
+            }
+        }
         const { id } = req.params;
         const { fullname, ra, email, password } = req.body;
         const alunos = await connection('students')
@@ -45,5 +56,15 @@ module.exports = {
         await connection('students').where('id', id).delete();
 
         return res.status(204).send();
+    },
+    async uploadimage(req, res) {
+        const upload = upImage.single('pictures');
+        if (upload) {
+            return res.send("Deu certo");
+        }else {
+            return res.send("Error uploading file.");
+        }
     }
+   
+    
 }
