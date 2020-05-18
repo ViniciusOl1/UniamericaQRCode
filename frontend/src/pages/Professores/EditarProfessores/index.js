@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom';
 import './index.css';
 import Header from '../../../components/Header';
 import api from '../../../services/api';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 function EditarProfessores(props) {
     const [fullname, setFullname] = useState('');

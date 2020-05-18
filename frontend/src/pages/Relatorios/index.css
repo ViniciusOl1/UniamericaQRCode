@@ -1,0 +1,38 @@
+
+main{
+    padding: 0 30px;
+}
+
+section.title{
+    display: flex;
+    grid-column: span 4;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+}
+
+section.title h2{
+    color: #0b396d;
+    font-weight: 500;
+}
+section.relatorios .button{
+    background: #63B446;
+    border: 0;
+    border-radius: 6px;
+    color: white;
+    margin-top: 50px;
+    margin-left: 10px;
+    padding: 16px 20px;
+    font-size: 20px;
+    text-decoration: none;
+}
+section.relatorios .button:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+section.relatorios{
+    text-align: center;
+    color: #0b396d;
+    font-weight: 400;
+    margin-bottom: 50px;
+}

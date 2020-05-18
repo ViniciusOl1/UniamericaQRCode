@@ -22,8 +22,8 @@ function CadastroAlunos() {
         try{
             await api.post('alunos', data);
             history.push('/alunos');
-        }catch(err){
-            alert('Erro ao cadastrar, tente novamente');
+        }catch(error){
+            alert(`Aluno com RA já cadastrado, tente novamente!`);
         }
     }
 

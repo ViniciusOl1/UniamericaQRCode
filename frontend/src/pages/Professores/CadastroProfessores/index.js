@@ -20,7 +20,7 @@ function CadastroProfessores() {
             await api.post('/professores', data);
             history.push('/professores');
         }catch(err){
-            alert('Erro ao cadastrar, tente novamente');
+            alert('Professor com e-mail já cadastrado, tente novamente!');
         }
             
     }

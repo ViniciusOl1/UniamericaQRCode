@@ -10,6 +10,7 @@
     "eslint": "^7.0.0",
     "file-saver": "^2.0.2",
     "formik": "^2.1.4",
+    "jspdf": "^1.5.3",
     "moment-timezone": "^0.5.28",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
