@@ -17,7 +17,7 @@ export default function Login({ navigation }) {
       await localStorage.setItem('studentName', res.data.fullname);
       navigation.navigate('HomeScreen');
     }catch(err){
-      alert(`Falha no login, tente novamente ${err}`);
+      alert(`Falha no login, tente novamente!`);
     }
   }
 

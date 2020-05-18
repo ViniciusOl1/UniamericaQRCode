@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
+import 'localstorage-polyfill';
 // import { Container } from './styles';
 
 export default function HomeScreen() {

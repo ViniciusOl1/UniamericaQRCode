@@ -31,6 +31,7 @@ routes.get('/aula/qrcode', ClassController.create);
 routes.get('/frequencia', FrequencyController.index);
 routes.post('/frequencia', FrequencyController.create);
 
-routes.get('/relatorios', RelatorioController.index);
+routes.get('/relatorios/diario', RelatorioController.diario);
+routes.get('/relatorios/mensal', RelatorioController.mensal);
 
 module.exports = routes;

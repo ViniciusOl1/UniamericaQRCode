@@ -4,7 +4,7 @@ import { BarCodeScanner } from 'expo-barcode-scanner';
 import { Camera } from 'expo-camera';
 // import { Container } from './styles';
 import api from '../../services/api';
-
+import 'localstorage-polyfill';
 
 export default function QRCode({ navigation }) {
     const [hasPermission, setHasPermission] = useState(null);
@@ -18,15 +18,18 @@ export default function QRCode({ navigation }) {
         })();
     }, []);
 
+    async function handleFrequency(data) {
+        try {
+            const res = await api.post('/frequencia', { studentId, data });
+            alert(`Presença realizada na data de ${data} no id ${studentId}!`);
+            navigation.navigate('HomeScreen');
+        } catch (err) {
+            alert(`Falha ao gerar presença, tente novamente!`);
+        }
+    }
     const handleBarCodeScanned = ({ type, data }) => {
         setScanned(true);
-        try{
-            const res = api.post('/frequencia', { studentId, data });
-            navigation.navigate('HomeScreen');
-          }catch(err){
-            alert(`Falha ao gerar presença, tente novamente ${err}`);
-          }
-        alert(`Presença realizada na data de ${data} no id ${studentId}!`);
+        handleFrequency(data);
     }
 
     if (hasPermission === null) {

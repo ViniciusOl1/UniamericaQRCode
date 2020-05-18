@@ -13,13 +13,23 @@ module.exports = {
     },
     async create(req, res) {
         const { fullname, ra, email, password } = req.body;
-        await connection('students').insert({
-            fullname,
-            ra,
-            email,
-            password
-        });
-        return res.json({ fullname, ra, email, password });
+
+        const student = await connection('students')
+            .where('ra', ra)
+            .select('*')
+            .first();
+        if (!student) {
+            await connection('students').insert({
+                fullname,
+                ra,
+                email,
+                password
+            });
+            return res.json({ fullname, ra, email, password });
+        } else {
+            return res.status(400).json({ error: 'Aluno com RA já cadastrado' });
+        }
+
     },
     async update(req, res) {
         const { id } = req.params;
