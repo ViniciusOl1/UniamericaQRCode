@@ -14,7 +14,7 @@ module.exports = {
     async create(req, res) {
         const { fullname, email, password } = req.body;
 
-        const teacher = await connection('students')
+        const teacher = await connection('teachers')
             .where('email', email)
             .select('*')
             .first();

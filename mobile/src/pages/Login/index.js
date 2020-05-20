@@ -12,7 +12,6 @@ export default function Login({ navigation }) {
   async function handleLogin(e){
     try{
       const res = await api.post('/login/alunos', { ra, password });
-      console.log(res.data.id);
       await localStorage.setItem('studentId', res.data.id);
       await localStorage.setItem('studentName', res.data.fullname);
       navigation.navigate('HomeScreen');

@@ -8,7 +8,7 @@ export default function HomeScreen() {
   const studentName = localStorage.getItem('studentName');
   return (
     <View style={homescreen.container}>
-      <Text>Bem vindo {studentName} - {studentId}!</Text>
+      <Text>Bem vindo {studentName}!</Text>
     </View>
   );
 }

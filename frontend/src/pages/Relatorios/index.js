@@ -47,7 +47,7 @@ function Relatorios() {
       ))
 
     // Save the Data
-    doc.save('Mensal.pdf')
+    doc.save('Total.pdf')
   }
 
 

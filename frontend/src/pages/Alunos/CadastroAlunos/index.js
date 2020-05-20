@@ -37,7 +37,7 @@ function CadastroAlunos() {
                         <input type="email" placeholder="Email: " value={email} onChange={e=>setEmail(e.target.value)}/>
                         <input type="text" placeholder="RA: " value={ra} onChange={e=>setRa(e.target.value)} />
                         <input type="password" placeholder="Senha: " value={password} onChange={e=>setPassword(e.target.value)} />
-                        <button type="submit" className="button-green">Acessar</button>
+                        <button type="submit" className="button-green">Cadastrar</button>
                         <button type="reset" className="button-red">Limpar</button>
                     </form>
                 </section>

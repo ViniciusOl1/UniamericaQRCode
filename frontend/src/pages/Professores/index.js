@@ -30,10 +30,6 @@ function Professores() {
                 <section class="professores">                                              
                 {teachers.map(teacher => ( 
                   <section key={teacher.id} class="professor-item" onClick={() => { history.push(`professores/editar/${teacher.id}`)}}>
-                        <section class="avatar">
-                            <img src="https://www.tenhomaisdiscosqueamigos.com/wp-content/uploads/2017/03/Avatar-1280x720.jpg"
-                                alt={teacher.fullname} class="avatar" />
-                        </section>
                         <span>{teacher.fullname}</span>
                     </section> 
                 ))}
