@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './index.css';
-import { saveAs } from 'file-saver';
 import Header from '../../components/Header';
 import api from '../../services/api';
 
@@ -13,7 +12,9 @@ function Dashboard() {
             setStudents(response.data);
         }
 
-        loadStudents();
+        setTimeout(() => {
+            loadStudents();
+        }, 6000);
     }, []);
   return (
     <>
@@ -26,7 +27,7 @@ function Dashboard() {
                 alt="Marque sua Presença" />
         </aside>
         <main>
-            <section class="presentes" onload="javascript:autoRefresh(6000);">
+            <section class="presentes">
                 <h2>Alunos Presentes</h2>
                 {students.map(student => (
                 <section key={student.id} class="presente-item">

@@ -28,12 +28,10 @@ function Relatorios() {
     var doc = jsPDF();
     var linha = 20;
 
-    {
       diario.map(student => (
-        doc.text(20, linha, `${student.data} - ${student.fullname}`),
-        linha = linha + 10
+        (doc.text(20, linha, `${student.data} - ${student.fullname}`),
+        linha = linha + 10)
       ))
-    }
 
     // Save the Data
     doc.save('Diario.pdf')
@@ -43,12 +41,10 @@ function Relatorios() {
     var doc = jsPDF();
     var linha = 20;
 
-    {
       mensal.map(student => (
-        doc.text(20, linha, `${student.data} - ${student.fullname}`),
-        linha = linha + 10
+        (doc.text(20, linha, `${student.data} - ${student.fullname}`),
+        linha = linha + 10)
       ))
-    }
 
     // Save the Data
     doc.save('Mensal.pdf')
