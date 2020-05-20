@@ -1,4 +1,4 @@
 [build] 
 base = "frontend/" 
 publish = "frontend/build/" 
-command = "npm execute build"
+command = "yarn install"
