@@ -1,4 +1,4 @@
 [build] 
 base = "frontend/" 
-publish = "frontend/build/" 
+publish = "frontend/" 
 command = "yarn install"
