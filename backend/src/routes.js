@@ -8,6 +8,25 @@ const SessionAlunoController = require('./controllers/SessionAlunoController');
 const SessionProfessorController = require('./controllers/SessionProfessorController');
 const FrequencyController = require('./controllers/FrequencyController');
 const RelatorioController = require('./controllers/RelatorioController');
+const UploadsController = require('./controllers/UploadsController');
+
+
+// Multer Upload Images
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+    destination: function(req, file, cb){
+        cb(null, 'uploads/')
+    },
+    filename: function(req, file, cb){
+        cb(null, Date.now()+file.originalname)
+    }
+})
+
+const upload = multer({storage: storage});
+
+routes.post('/avatar', upload.single('avatar'), UploadsController.alunos);
+
 
 //Login
 routes.post('/login/alunos', SessionAlunoController.create);
