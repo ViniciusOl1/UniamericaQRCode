@@ -19,7 +19,6 @@ function Dashboard() {
   return (
     <>
     <Header />
-    <meta http-equiv="refresh" content="5"></meta>
     <div id="container">
         <aside>
             <h2>Marque sua presença</h2>

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './index.css';
 
 import api from '../../services/api';
@@ -29,11 +29,11 @@ function Header() {
 
       <nav>
         <ul>
-          <li><a href="/dashboard">Dashboard</a></li>
-          <li><a href="/alunos">Alunos</a></li>
-          <li><a href="/professores">Professores</a></li>
-          <li><a href="/relatorios">Relatórios</a></li>
-          <li><a href="/" onClick={handleLogout}>Sair</a></li>
+          <li><Link to="/dashboard">Dashboard</Link></li>
+          <li><Link to="/alunos">Alunos</Link></li>
+          <li><Link to="/professores">Professores</Link></li>
+          <li><Link to="/relatorios">Relatórios</Link></li>
+          <li><Link to="/" onClick={handleLogout}>Sair</Link></li>
         </ul>
       </nav>
     </header>
