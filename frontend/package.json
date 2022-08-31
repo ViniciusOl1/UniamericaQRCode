@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "jspdf": "^1.5.3",
-    "moment-timezone": "^0.5.28",
+    "moment-timezone": "^0.5.35",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
